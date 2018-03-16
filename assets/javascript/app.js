@@ -29,6 +29,11 @@ var questions = [{
     answers: ["Mos Eisley", "Mos Espa", "Theed", "Tosche Station"],
     correctAnswer: "Tosche Station",
     image: "assets/images/tosche.gif"
+}, {
+    question: "What type of animal did Luke used to bullseye in his T-16 back home?",
+    answers: ["Womp Rat", "Wampa", "Sarlacc", "Porg"],
+    correctAnswer: "Womp Rat",
+    image: "assets/images/womprats.gif"
 }];
 
 // Create Game Object including all game properties and methods
@@ -57,10 +62,15 @@ var game = {
     },
     // Create method to load question to the page
     loadQuestion: function() {
-        // Create timer - set countdown to decrement every second
+        // Create timer - this sets countdown to decrement every second
         timer = setInterval(game.countdown, 1000);
-        // Display current question
+        // Write HTML to display current question
         $('#subwrapper').html('<h2>' + question[game.currentQuestion].question + '</h2>');
+        // Loop through array of possible answers
+        for(var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
+            // Create a button for each answer 
+            $('#subwrapper').append('<button class="answer-button" id="button-'+ i +' " data-name="' + questions[game.currentQuestion].answers[i] + '">' + questions[game.currentQuestion].answers[i] + '</button>');
+        }
     },
     nextQuestion: function() {
 
