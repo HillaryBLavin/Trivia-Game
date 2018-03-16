@@ -54,6 +54,8 @@ var game = {
     correct: 0,
     // Counter for wrong answers
     wrong: 0,
+    // Counter for unanswered questions
+    unanswered: 0,
     // Create method to run countdown (counter) 
     countdown: function() {
         // Decrement counter
@@ -90,6 +92,8 @@ var game = {
     timeUp: function() {
         // Stop timer
         clearInterval(timer);
+        // Incremenet unanswered counter
+        game.unanswered ++;
         // Display message that they have run out of time
         $('#subwrapper').html('<h2>I find your lack of answer disturbing...</h2>');
         // Display correct answer
@@ -103,7 +107,11 @@ var game = {
         }
     },
     results: function () {
-
+        // Stop timer
+        clearInterval(timer);
+        $('#subwrapper').html("<h2>Quiz Complete!</h2><br><h3>May the Force Be With You...Always</h3>");
+        $('#subwrapper').append("<h4>Correct: " + game.correct + "</h4>");
+        $('#subwrapper').append("<h4>Incorrect: " + game.wrong + "</h4>");
     },
     clicked: function (e) {
         // Stop timer
