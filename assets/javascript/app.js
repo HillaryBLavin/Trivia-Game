@@ -88,7 +88,7 @@ var game = {
 
     },
     clicked: function (e) {
-        // Stop timer
+        // Stop timer and reset
         clearInterval(timer);
         // If the answer is correct, run the answeredCorrectly method
         if($(e.target).data("name") == questions[game.currentQuestion].correctAnswer) {
@@ -100,6 +100,20 @@ var game = {
     },
     answeredCorrectly: function () {
         console.log("YOU GOT IT!");
+        // Stop timer and reset
+        clearInterval(timer);
+        // Increment correct answer counter
+        correct ++;
+        // Display header 
+        $('#subwrapper').html('<h2>The Force is strong with you!</h2>');
+        // If this is the last question, take the user to the results screen after 3 seconds
+        if(game.currentQuestion == questions.length - 1) {
+            setTimeout(games.results, 3*1000);
+        // If this is not the last question, load the next question after 3 seconds
+        } else {
+            setTimeout(game.nextQuestion, 3*1000);
+        }
+        // If this is not the last question, load the next question
     },
     answeredWrong: function () {
         console.log("Bummer...");
