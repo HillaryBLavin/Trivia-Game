@@ -115,6 +115,8 @@ var game = {
         $('#subwrapper').html('<h2>I find your lack of answer disturbing...</h2>');
         // Display correct answer
         $('#subwrapper').append('<h3>The Correct Answer Was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
+        // Display gif
+        $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
             setTimeout(game.results, 3*1000);
