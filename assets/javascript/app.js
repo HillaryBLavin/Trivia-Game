@@ -50,6 +50,11 @@ var questions = [{
     answers: ["Wookie", "Gungan", "Twi'lek", "Rodian"],
     correctAnswer: "Twi'lek",
     image: "assets/images/bib.gif"
+}, {
+    question: "What planet is Boba Fett from?",
+    answers: ["Mustafar", "Corellia", "Coruscant", "Kamino"],
+    correctAnswer: "Kamino",
+    image: "assets/images/boba.gif"
 }];
 
 // Create Game Object including all game properties and methods
