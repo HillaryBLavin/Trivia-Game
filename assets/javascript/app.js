@@ -103,7 +103,7 @@ var game = {
         // Stop timer and reset
         clearInterval(timer);
         // Increment correct answer counter
-        correct ++;
+        game.correct ++;
         // Display header 
         $('#subwrapper').html('<h2>The Force is strong with you!</h2>');
         // If this is the last question, take the user to the results screen after 3 seconds
@@ -119,7 +119,7 @@ var game = {
         // Stop timer and reset
         clearInterval(timer);
         // Increment wrong answer counter
-        wrong ++;
+        game.wrong ++;
         // Display header 
         $('#subwrapper').html('<h2>I find your lack of knowledge disturbing...</h2>');
         // If this is the last question, take the user to the results screen after 3 seconds
