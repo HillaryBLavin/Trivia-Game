@@ -45,6 +45,11 @@ var questions = [{
     answers: ["Womp Rat", "Wampa", "Sarlacc", "Porg"],
     correctAnswer: "Womp Rat",
     image: "assets/images/womprats.gif"
+}, {
+    question: "What race is Jabba the Hutt's majordomo, Bib Fortuna?",
+    answers: ["Wookie", "Gungan", "Twi'lek", "Rodian"],
+    correctAnswer: "Twi'lek",
+    image: "assets/images/bib.gif"
 }];
 
 // Create Game Object including all game properties and methods
