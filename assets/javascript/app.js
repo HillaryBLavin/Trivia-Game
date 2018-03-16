@@ -4,7 +4,22 @@ $('#start').on('click', function() {
 })
 
 // Create an array of multiple-choice questions with associated images
-var questions = [{}];
+var questions = [{
+    question: "In <i>Star Wars: A New Hope</i>, where is the hidden rebel base?",
+    answers: ["Tatooine", "Dantooine", "Yavin IV", "Dagobah"],
+    correctAnswer: "Yavin IV",
+    image: "assets/images/yavin4.gif"
+}, {
+    question: "In how many forms of communication is C-3PO fluent?",
+    answers: ["Twelve", "Three", "Over 2 million", "Over 6 million"],
+    correctAnswer: "Over 6 million",
+    image: "assets/images/c3po.gif"
+}, {
+    question: "Who were Leia's adoptive parents?",
+    answers: ["Owen and Beru Lars", "Bail and Breha Organa", "Corran Horn and Mirax Terrik", "Padmé Amidala and Anakin Skywalker"],
+    correctAnswer: "Bail and Breha Organa",
+    image: "assets/images/organa.gif"
+}];
 
 // Create Game Object including all game properties and methods
 var game = {
