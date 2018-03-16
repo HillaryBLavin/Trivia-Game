@@ -121,7 +121,7 @@ var game = {
         $('#subwrapper').append("<h4>Incorrect: " + game.wrong + "</h4>");
         $('#subwrapper').append("<h4>Unanswered: " + game.unanswered + "</h4>");
         $('#subwrapper').append("<button id='reset'>Try Again?</button>");
-        $('#subwrapper').html("<h5>Do...or do not. There is no try.</h5>");
+        $('#subwrapper').append("<h5>Do...or do not. There is no try.</h5>");
     },
     clicked: function (e) {
         // Stop timer
@@ -170,7 +170,7 @@ var game = {
     },
     reset: function() {
         game.currentQuestion = 0;
-        game.counter = 0;
+        game.counter = 20;
         game.correct = 0;
         game.wrong = 0;
         game.unanswered = 0;
