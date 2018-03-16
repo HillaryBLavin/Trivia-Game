@@ -79,7 +79,6 @@ var game = {
         $('#counter').html(game.counter);
         // When time runs out, run the timeUp method
         if(game.counter <= 0){
-            console.log("TIMES UP!");
             game.timeUp();
         }
     },
@@ -147,7 +146,6 @@ var game = {
         }
     },
     answeredCorrectly: function () {
-        console.log("YOU GOT IT!");
         // Stop timer
         clearInterval(timer);
         // Increment correct answer counter
@@ -165,7 +163,6 @@ var game = {
         }
     },
     answeredWrong: function () {
-        console.log("Bummer...");
         // Stop timer and reset
         clearInterval(timer);
         // Increment wrong answer counter
