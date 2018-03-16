@@ -4,6 +4,11 @@ $('#start').on('click', function() {
     game.loadQuestion();
 })
 
+// Add on-click function for answer button
+$(document).on('click', '.answer-button', function(e) {
+    game.clicked(e);
+})
+
 // Create an array of multiple-choice questions with associated images
 var questions = [{
     question: "In <i>Star Wars: A New Hope</i>, where is the hidden rebel base?",
@@ -82,14 +87,22 @@ var game = {
     results: function () {
 
     },
-    clicked: function () {
-
+    clicked: function (e) {
+        // Stop timer
+        clearInterval(timer);
+        // If the answer is correct, run the answeredCorrectly method
+        if($(e.target).data("name") == questions[game.currentQuestion].correctAnswer) {
+            game.answeredCorrectly();
+        // If the answer is wrong, run the answeredWrong method
+        } else {
+            game.answeredWrong();
+        }
     },
     answeredCorrectly: function () {
-
+        console.log("YOU GOT IT!");
     },
     answeredWrong: function () {
-
+        console.log("Bummer...");
     },
     reset: function() {
 
