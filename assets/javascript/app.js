@@ -77,8 +77,10 @@ var game = {
     loadQuestion: function() {
         // Create timer - this sets countdown to decrement every second
         timer = setInterval(game.countdown, 1000);
-        // Write HTML to display current question
-        $('#subwrapper').html('<h2>' + questions[game.currentQuestion].question + '</h2>');
+        // Display timer
+        $('#subwrapper').html("<h3>Time Remaining: <span id='counter'>20</span> seconds</h3>");
+        // Display current questions
+        $('#subwrapper').append('<h2>' + questions[game.currentQuestion].question + '</h2>');
         // Loop through array of possible answers
         for(var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             // Create a button for each answer 
