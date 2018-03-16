@@ -1,6 +1,7 @@
 // Add on-click function that removes Start button 
 $('#start').on('click', function() {
     $('#start').remove();
+    game.loadQuestion();
 })
 
 // Create an array of multiple-choice questions with associated images
@@ -65,7 +66,7 @@ var game = {
         // Create timer - this sets countdown to decrement every second
         timer = setInterval(game.countdown, 1000);
         // Write HTML to display current question
-        $('#subwrapper').html('<h2>' + question[game.currentQuestion].question + '</h2>');
+        $('#subwrapper').html('<h2>' + questions[game.currentQuestion].question + '</h2>');
         // Loop through array of possible answers
         for(var i = 0; i < questions[game.currentQuestion].answers.length; i++) {
             // Create a button for each answer 
