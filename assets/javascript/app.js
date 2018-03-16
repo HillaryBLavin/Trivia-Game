@@ -9,6 +9,11 @@ $(document).on('click', '.answer-button', function(e) {
     game.clicked(e);
 })
 
+// Add on-click function for Try Again? button
+$(document).on('click', '#reset', function() {
+    game.reset();
+})
+
 // Create an array of multiple-choice questions with associated images
 var questions = [{
     question: "In <i>Star Wars: A New Hope</i>, where is the hidden rebel base?",
@@ -112,6 +117,9 @@ var game = {
         $('#subwrapper').html("<h2>Quiz Complete!</h2><br><h3>May the Force Be With You...Always</h3>");
         $('#subwrapper').append("<h4>Correct: " + game.correct + "</h4>");
         $('#subwrapper').append("<h4>Incorrect: " + game.wrong + "</h4>");
+        $('#subwrapper').append("<h4>Unanswered: " + game.unanswered + "</h4>");
+        $('#subwrapper').append("<button id='reset'>Try Again?</button>");
+        $('#subwrapper').html("<h5>Do...or do not. There is no try.</h5>");
     },
     clicked: function (e) {
         // Stop timer
@@ -159,6 +167,12 @@ var game = {
         }
     },
     reset: function() {
+        game.currentQuestion = 0;
+        game.counter = 0;
+        game.correct = 0;
+        game.wrong = 0;
+        game.unanswered = 0;
+        game.loadQuestion();
 
     }
 }
