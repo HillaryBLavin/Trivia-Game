@@ -142,13 +142,13 @@ var game = {
         game.correct ++;
         // Display header 
         $('#subwrapper').html('<h2>The Force is strong with you!</h2>');
-        $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">')
+        $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
-            setTimeout(game.results, 3*1000);
+            setTimeout(game.results, 5*1000);
         // If this is not the last question, load the next question after 3 seconds
         } else {
-            setTimeout(game.nextQuestion, 3*1000);
+            setTimeout(game.nextQuestion, 5*1000);
         }
     },
     answeredWrong: function () {
@@ -161,12 +161,13 @@ var game = {
         $('#subwrapper').html('<h2>Search your feelings...</h2>');
         // Display correct answer
         $('#subwrapper').append('<h3>The Correct Answer Was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
+        $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
-            setTimeout(game.results, 3*1000);
+            setTimeout(game.results, 5*1000);
         // If this is not the last question, load the next question after 3 seconds
         } else {
-            setTimeout(game.nextQuestion, 3*1000);
+            setTimeout(game.nextQuestion, 5*1000);
         }
     },
     reset: function() {
