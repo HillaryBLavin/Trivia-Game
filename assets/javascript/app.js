@@ -15,7 +15,7 @@ var questions = [{
     correctAnswer: "Over 6 million",
     image: "assets/images/c3po.gif"
 }, {
-    question: "Who were Leia's adoptive parents?",
+    question: "Who were Princess Leia's adoptive parents?",
     answers: ["Owen and Beru Lars", "Bail and Breha Organa", "Corran Horn and Mirax Terrik", "Padmé Amidala and Anakin Skywalker"],
     correctAnswer: "Bail and Breha Organa",
     image: "assets/images/organa.gif"
