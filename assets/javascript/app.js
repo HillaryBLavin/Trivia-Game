@@ -79,16 +79,34 @@ var game = {
         }
     },
     nextQuestion: function() {
-
+        // Reset timer
+        game.counter = 20;
+        // Reset display timer
+        $('#counter').html(game.counter);
+        // Increment current question "counter" and load next question
+        game.currentQuestion ++;
+        game.loadQuestion();
     },
     timeUp: function() {
-
+        // Stop timer
+        clearInterval(timer);
+        // Display message that they have run out of time
+        $('#subwrapper').html('<h2>I find your lack of answer disturbing...</h2>');
+        // Display correct answer
+        $('#subwrapper').append('<h3>The Correct Answer Was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
+        // If this is the last question, take the user to the results screen after 3 seconds
+        if(game.currentQuestion == questions.length - 1) {
+            setTimeout(games.results, 3*1000);
+        // If this is not the last question, load the next question after 3 seconds
+        } else {
+            setTimeout(game.nextQuestion, 3*1000);
+        }
     },
     results: function () {
 
     },
     clicked: function (e) {
-        // Stop timer and reset
+        // Stop timer
         clearInterval(timer);
         // If the answer is correct, run the answeredCorrectly method
         if($(e.target).data("name") == questions[game.currentQuestion].correctAnswer) {
@@ -100,7 +118,7 @@ var game = {
     },
     answeredCorrectly: function () {
         console.log("YOU GOT IT!");
-        // Stop timer and reset
+        // Stop timer
         clearInterval(timer);
         // Increment correct answer counter
         game.correct ++;
@@ -121,7 +139,9 @@ var game = {
         // Increment wrong answer counter
         game.wrong ++;
         // Display header 
-        $('#subwrapper').html('<h2>I find your lack of knowledge disturbing...</h2>');
+        $('#subwrapper').html('<h2>Search your feelings...</h2>');
+        // Display correct answer
+        $('#subwrapper').append('<h3>The Correct Answer Was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
             setTimeout(games.results, 3*1000);
