@@ -142,6 +142,7 @@ var game = {
         game.correct ++;
         // Display header 
         $('#subwrapper').html('<h2>The Force is strong with you!</h2>');
+        $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">')
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
             setTimeout(game.results, 3*1000);
