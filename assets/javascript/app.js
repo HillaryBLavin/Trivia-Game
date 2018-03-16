@@ -142,6 +142,7 @@ var game = {
         game.correct ++;
         // Display header 
         $('#subwrapper').html('<h2>The Force is strong with you!</h2>');
+        // Display gif
         $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
@@ -161,6 +162,7 @@ var game = {
         $('#subwrapper').html('<h2>Search your feelings...</h2>');
         // Display correct answer
         $('#subwrapper').append('<h3>The Correct Answer Was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
+        // Display gif
         $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
         // If this is the last question, take the user to the results screen after 3 seconds
         if(game.currentQuestion == questions.length - 1) {
