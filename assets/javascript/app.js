@@ -24,6 +24,11 @@ var questions = [{
     answers: ["Bothans", "Rebels", "Hutts", "Jawas"],
     correctAnswer: "Bothans",
     image: "assets/images/mothma.gif"
+}, {
+    question: "Where does Luke Skywalker buy his power converters?",
+    answers: ["Mos Eisley", "Mos Espa", "Theed", "Tosche Station"],
+    correctAnswer: "Tosche Station",
+    image: "assets/images/tosche.gif"
 }];
 
 // Create Game Object including all game properties and methods
