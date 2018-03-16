@@ -19,6 +19,11 @@ var questions = [{
     answers: ["Owen and Beru Lars", "Bail and Breha Organa", "Corran Horn and Mirax Terrik", "Padmé Amidala and Anakin Skywalker"],
     correctAnswer: "Bail and Breha Organa",
     image: "assets/images/organa.gif"
+}, {
+    question: '"Many ______ died to bring us this information."',
+    answers: ["Bothans", "Rebels", "Hutts", "Jawas"],
+    correctAnswer: "Bothans",
+    image: "assets/images/mothma.gif"
 }];
 
 // Create Game Object including all game properties and methods
