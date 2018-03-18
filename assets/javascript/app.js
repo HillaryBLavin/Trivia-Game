@@ -33,7 +33,7 @@ $(document).ready(function() {
         correctAnswer: "Bail and Breha Organa",
         image: "assets/images/organa.gif"
     }, {
-        question: '"Many ______ died to bring us this information."',
+        question: '"Many <span style="letter-spacing: 0px;">______</span> died to bring us this information."',
         answers: ["Bothans", "Rebels", "Hutts", "Jawas"],
         correctAnswer: "Bothans",
         image: "assets/images/mothma.gif"
@@ -158,10 +158,10 @@ $(document).ready(function() {
             $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
             // If this is the last question, take the user to the results screen after 3 seconds
             if(game.currentQuestion == questions.length - 1) {
-                setTimeout(game.results, 5*1000);
+                setTimeout(game.results, 4*1000);
             // If this is not the last question, load the next question after 3 seconds
             } else {
-                setTimeout(game.nextQuestion, 5*1000);
+                setTimeout(game.nextQuestion, 4*1000);
             }
         },
         answeredWrong: function () {
@@ -177,10 +177,10 @@ $(document).ready(function() {
             $('#subwrapper').append('<img src = "'+ questions[game.currentQuestion].image +'">');
             // If this is the last question, take the user to the results screen after 3 seconds
             if(game.currentQuestion == questions.length - 1) {
-                setTimeout(game.results, 5*1000);
+                setTimeout(game.results, 4*1000);
             // If this is not the last question, load the next question after 3 seconds
             } else {
-                setTimeout(game.nextQuestion, 5*1000);
+                setTimeout(game.nextQuestion, 4*1000);
             }
         },
         reset: function() {
